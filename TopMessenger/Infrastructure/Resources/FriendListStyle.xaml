@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="ListViewItem" x:Key="FriendLisstStyle">
+        <Setter Property="Background" Value="#393332"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListViewItem">
+                    <Border CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            Margin="10,10,10,0"
+                            Height="70"
+                            >
+                        <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                            <Ellipse  Width="45" Height="45">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="{Binding Photo}"></ImageBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <StackPanel>
+                                
+                                <Label Content="{Binding FirstName}"
+                                       FontWeight="Bold"
+                                       FontSize="17"
+                                       Foreground="White"
+                                       />
+                                <Label Content="{Binding LastMessage}"
+                                       FontWeight="Normal"
+                                       FontSize="10"
+                                       Foreground="LightGray"
+                                       />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#A8A2A1" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
